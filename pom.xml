@@ -260,5 +260,29 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>payara-server-embedded-no-jpms</id>
+            <properties>
+                <arquillian.launch>payara-server-embedded</arquillian.launch>
+            </properties>
+            <dependencies>
+                <!-- Declaring slf4j dependency is required here to override the slf4j classes that seem to be shaded
+                     into payara which breaks logging functionality -->
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>fish.payara.arquillian</groupId>
+                    <artifactId>arquillian-payara-server-embedded</artifactId>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>fish.payara.extras</groupId>
+                    <artifactId>payara-embedded-all</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
 </project>

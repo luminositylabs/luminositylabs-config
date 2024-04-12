@@ -64,11 +64,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${dependency.logback.version}</version>
-            </dependency>
             <!-- The arquillian-bom dependency imports slf4j-api and slfj-simple which may be defined with older
                  versions and require overriding to get the latest versions. -->
             <dependency>

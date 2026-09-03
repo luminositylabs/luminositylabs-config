@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-26.04]
-        jdk_version: [21.0.12-zulu]
+        jdk_version: [21.0.12-zulu, 25.0.4-zulu, 26.0.2-zulu]
         include:
           - os: ubuntu-26.04
             jdk_version: 21.0.12-zulu
@@ -83,7 +83,7 @@ jobs:
       run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} site site:stage
 
     - name: Maven deploy
-      if: ${{ matrix.maven_deploy && (github.ref == 'refs/heads/main') && (github.event_name != 'pull_request') }}
+      if: ${{ matrix.maven_deploy && (github.ref == 'refs/heads/jakarta_ee_11_java17') && (github.event_name != 'pull_request') }}
       env:
         SONATYPE_CENTRAL_PORTAL_REPO_USERNAME: ${{ secrets.SONATYPE_CENTRAL_PORTAL_REPO_USERNAME }}
         SONATYPE_CENTRAL_PORTAL_REPO_PASSWORD: ${{ secrets.SONATYPE_CENTRAL_PORTAL_REPO_PASSWORD }}

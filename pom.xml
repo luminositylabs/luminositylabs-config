@@ -21,11 +21,11 @@
     <parent>
         <groupId>co.luminositylabs.oss</groupId>
         <artifactId>luminositylabs-oss-parent</artifactId>
-        <version>0.5.2-SNAPSHOT</version>
+        <version>0.4.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>luminositylabs-config</artifactId>
-    <version>0.21.0.71-SNAPSHOT</version>
+    <version>0.17.0.71-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>luminositylabs-config</name>
@@ -59,7 +59,7 @@
         <!-- Dependency versions -->
         <dependency.arquillian.version>1.10.2.Final</dependency.arquillian.version>
         <dependency.arquillian-payara-containers.version>3.1</dependency.arquillian-payara-containers.version>
-        <dependency.payara.version>6.2025.11</dependency.payara.version>
+        <dependency.payara.version>7.2026.8</dependency.payara.version>
         <dependency.shrinkwrap-resolver.version>3.3.7</dependency.shrinkwrap-resolver.version>
         <dependency.maven-shared-utils.version>3.4.2</dependency.maven-shared-utils.version>
     </properties>

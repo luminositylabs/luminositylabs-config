@@ -61,20 +61,20 @@ jobs:
     - name: Log github.ref
       run: echo "${{ github.ref }}"
 
-    - name: List Maven repositories
-      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} dependency:list-repositories
+#    - name: List Maven repositories
+#      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} dependency:list-repositories
 
-    - name: Show Maven dependency tree
-      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} dependency:tree
+#    - name: Show Maven dependency tree
+#      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} dependency:tree
 
-    - name: Show Maven active profiles
-      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} help:active-profiles
+#    - name: Show Maven active profiles
+#      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} help:active-profiles
 
     - name: Show Maven effective POM
       run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} help:effective-pom
 
-    - name: Maven build/test
-      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} clean install
+#    - name: Maven build/test
+#      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} clean install
 
 #    - name: Maven verify with payara embedded profile
 #      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }},${{ matrix.payara_server_embedded_profile_name }} ${{ env.MAVEN_PROPS }} verify

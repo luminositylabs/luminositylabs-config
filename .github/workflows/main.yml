@@ -11,23 +11,23 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-26.04]
-        jdk_version: [8.0.504+1-zulu, 11.0.32+1.1-zulu, 17.0.20+1.1-zulu]
+        jdk_version: [8.0.512.0+8-zulu, 11.0.33.0+9-zulu, 17.0.21.0+9-zulu]
         payara_server_embedded_profile_name: [payara-server-embedded, payara-server-embedded-no-jpms]
         include:
           - os: ubuntu-26.04
-            jdk_version: 8.0.502-zulu
-            zulu_version: 8.96.0.205
+            jdk_version: 8.0.512.0+8-zulu
+            zulu_version: 8.98.0.107
             maven_deploy: true
             docker_build: true
             container_image_repo: luminositylabs
             container_image_name: openjdk
-            container_image_tag: 8u504_zulu-alpine-8.96.0.205
+            container_image_tag: 8u512_zulu-alpine-8.98.0.107
         exclude:
-          - jdk_version: 8.0.504+1-zulu
+          - jdk_version: 8.0.512.0+8-zulu
             payara_server_embedded_profile_name: payara-server-embedded
-          - jdk_version: 11.0.32+1.1-zulu
+          - jdk_version: 11.0.33.0+9-zulu
             payara_server_embedded_profile_name: payara-server-embedded-no-jpms
-          - jdk_version: 17.0.20+1.1-zulu
+          - jdk_version: 17.0.21.0+9-zulu
             payara_server_embedded_profile_name: payara-server-embedded-no-jpms
     name: Build on OS ${{ matrix.os }} using JDK ${{ matrix.jdk_version }}
     runs-on: ${{ matrix.os }}

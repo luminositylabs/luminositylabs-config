@@ -89,9 +89,9 @@ jobs:
 #        SONATYPE_CENTRAL_PORTAL_REPO_PASSWORD: ${{ secrets.SONATYPE_CENTRAL_PORTAL_REPO_PASSWORD }}
 #      run: ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} ${{ env.MAVEN_PROPS }} deploy
 
-#    - name: Docker maven build
-#      if: ${{ matrix.docker_build }}
-#      env:
-#        CBD: /usr/src/build
-#        P: luminositylabs-oss
-#      run: docker container run --rm -i -v "$(pwd)":"${CBD}" -v ${HOME}/.gnupg:/root/.gnupg -v ${P}-${{ matrix.container_image_tag }}-mvn-repo:/root/.m2 -w "${CBD}" ${{ matrix.container_image_repo }}/${{ matrix.container_image_name }}:${{ matrix.container_image_tag }} sh -l -c "apk update && apk add -u gnupg && ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} -Djavadoc.path=/usr/bin/javadoc dependency:list-repositories dependency:tree help:active-profiles clean install site site:stage"
+    - name: Docker maven build
+      if: ${{ matrix.docker_build }}
+      env:
+        CBD: /usr/src/build
+        P: luminositylabs-oss
+      run: docker container run --rm -i -v "$(pwd)":"${CBD}" -v ${HOME}/.gnupg:/root/.gnupg -v ${P}-${{ matrix.container_image_tag }}-mvn-repo:/root/.m2 -w "${CBD}" ${{ matrix.container_image_repo }}/${{ matrix.container_image_name }}:${{ matrix.container_image_tag }} sh -l -c "apk update && apk add -u gnupg && ./mvnw -U -V -s ${{ env.SETTINGS }} -P${{ env.PROFILES }} -Djavadoc.path=/usr/bin/javadoc dependency:list-repositories dependency:tree help:active-profiles clean install site site:stage"

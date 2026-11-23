@@ -21,7 +21,7 @@ jobs:
             docker_build: true
             container_image_repo: luminositylabs
             container_image_name: openjdk
-            container_image_tag: 8u512_zulu-alpine-8.98.0.107
+            container_image_tag: 8u514_zulu-alpine-8.98.0.201
         exclude:
           - jdk_version: 8.0.512.0+8-zulu
             payara_server_embedded_profile_name: payara-server-embedded
